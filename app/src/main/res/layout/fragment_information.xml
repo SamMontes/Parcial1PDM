@@ -10,23 +10,32 @@
             type="com.example.parcial1samael.ui.sculpture.viewmodel.SculptureViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.sculpture.InformationFragment">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Esculturas"
-            android:textColor="@color/black"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Escultura"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </FrameLayout>
 </layout>

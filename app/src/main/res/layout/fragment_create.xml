@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
    <data>
@@ -14,11 +15,82 @@
         android:layout_height="match_parent"
         tools:context=".ui.sculpture.newsculpture.CreateFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:gravity="center"
+            android:text="Nueva Escultura"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameInput_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nombre"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white"
+
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameEditText"
+                android:text="@={viewmodel.name}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/materialInput_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Material"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/nameInput_text"
+            app:layout_constraintStart_toStartOf="@+id/nameInput_text"
+            app:layout_constraintTop_toBottomOf="@+id/nameInput_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/categoryEditText"
+                android:text="@={viewmodel.material}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/submit_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:onClick="@{()-> viewmodel.createSculpture()}"
+            android:text="Añadir"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialInput_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </layout>
