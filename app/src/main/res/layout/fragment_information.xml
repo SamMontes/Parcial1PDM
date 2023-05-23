@@ -32,6 +32,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/category_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="category"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@={viewmodel.name}"
+                android:textColor="@color/black"
+                android:textSize="44sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/qualification_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="qualification"
+                android:text="@={viewmodel.material}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/largeTextGap"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/category_textview"
+                app:layout_constraintTop_toTopOf="@+id/category_textview" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

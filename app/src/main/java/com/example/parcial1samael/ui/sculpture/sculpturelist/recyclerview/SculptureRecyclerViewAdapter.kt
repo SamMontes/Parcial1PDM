@@ -9,10 +9,10 @@ import com.example.parcial1samael.data.sculptures
 class SculptureRecyclerViewAdapter (
     private val clickListener: (SculptureModel) -> Unit
 ): RecyclerView.Adapter<SculptureRecyclerViewHolder>() {
-    private val movies = ArrayList<SculptureModel>()
+    private val sculptures = ArrayList<SculptureModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SculptureRecyclerViewHolder {
-        val binding = sculptureItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = SculptureItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SculptureRecyclerViewHolder(binding)
     }
 
@@ -25,7 +25,8 @@ class SculptureRecyclerViewAdapter (
         holder.bind(sculpture, clickListener)
     }
 
-    fun setData(sculpturesList: List<SculptureModel>){
+    fun setData(sculpturesList: List<SculptureModel>) {
         sculptures.clear()
         sculptures.addAll(sculpturesList)
     }
+}
